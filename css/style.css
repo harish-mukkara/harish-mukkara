@@ -1,77 +1,173 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600');
-
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600");
 body {
-    font-family: Nunito, monospace;
-    margin: 0;
-    background-color: #222831;
+  margin: 0;
+  font-family: Nunito, monospace;
+  background-color: #222831;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .hero {
-    display: flex;
-    padding-top: 50px;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
-
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.proimage img {
-    border: 1px solid #00adb5;
-    display: block;
-    border-radius: 50%;
+.hero .proimage {
+  text-align: center;
+}
+
+.hero .proimage img {
+  border: 1px solid #00adb5;
+  border-radius: 50%;
+}
+
+.center {
+  text-align: center;
 }
 
 .center h1,
-h4 {
-    padding: 20px 30px;
-    color: #00adb5;
-    text-align: center;
+.center h4 {
+  padding: 20px 30px;
+  font-weight: 600;
+  color: #00adb5;
 }
 
 .center h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0;
-    font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .center h1 {
+    font-size: 2rem;
+  }
 }
 
 .center h4 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    background: inherit;
-    font-weight: 100;
-
+  margin-top: 0;
+  font-size: 1.5rem;
 }
 
-.center .social {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
+@media (max-width: 767px) {
+  .center h4 {
+    font-size: 1.2rem;
+  }
 }
 
-.social div {
-    color: #eeeeee;
-    font-weight: 100;
+.card {
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.social div a {
-    color: #eeeeee;
-    text-decoration: none;
-    text-transform: none;
-    font-weight: 100;
+@media (min-width: 1024px) {
+  .card {
+    width: 50%;
+  }
 }
 
-@media screen and (max-width:800px) {
-    .center h1 {
-        font-size: 2rem;
-    }
-
-    .center h4 {
-        font-size: 1.2rem;
-        font-weight: 100;
-    }
-
-    body {
-        padding: 0 10px;
-        font-size: 0.9rem;
-    }
+.card .card-title {
+  text-transform: uppercase;
+  color: #eeeeee;
+  font-weight: 100;
+  margin-bottom: 10px;
 }
+
+.card .card-item {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card-item .item-icon {
+  font-size: 1.2rem;
+  width: 40px;
+  color: #00adb5;
+}
+
+.card .card-item .item-body {
+  padding-left: 10px;
+}
+
+.card .card-item .item-body .item-head {
+  font-size: 1.3rem;
+  color: #00adb5;
+}
+
+@media (max-width: 767px) {
+  .card .card-item .item-body .item-head {
+    font-size: 1.1rem;
+  }
+}
+
+.card .card-item .item-body .item-description {
+  color: #808080;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .card .card-item .item-body .item-description {
+    font-size: .75rem;
+  }
+}
+
+.card .card-item .twitter {
+  color: #38A1F3;
+}
+
+.card .card-item .facebook {
+  color: #3B5998;
+}
+
+.card .card-item .github {
+  color: #38A1F3;
+}
+
+.card .card-item .php {
+  color: #666699;
+  font-size: 1rem;
+}
+
+.card .card-item .python {
+  color: #666699;
+  font-size: 1.5rem;
+}
+
+.card .card-item .javascript {
+  color: #F5DE19;
+}
+
+.card .card-item .css {
+  color: #0070B7;
+}
+
+.card .card-item .html {
+  color: #E44D26;
+}
+
+.card .card-item .fa-gamepad {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=style.css.map */

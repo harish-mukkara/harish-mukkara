@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600');
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+$mycolors : (background : #222831,
+    lightbackground: #808080,
+    headcolor: #00adb5,
+    whitecolor: #eeeeee);
+
+body {
+    margin: 0;
+    font-family: Nunito, monospace;
+    background-color: map-get($map: $mycolors, $key: background);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero {
+    display: flex;
+    padding-top: 50px;
+    // align-items: center;
+    flex-direction: column;
+
+    .proimage {
+
+        text-align: center;
+
+        img {
+            border: 1px solid map-get($map: $mycolors, $key: headcolor);
+            border-radius: 50%;
+        }
+    }
+}
+
+.center {
+
+    text-align: center;
+
+    h1,
+    h4 {
+        padding: 20px 30px;
+        font-weight: 600;
+        color: map-get($map: $mycolors, $key: headcolor);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+
+        @include mobile {
+
+            font-size: 2rem;
+        }
+
+    }
+
+    h4 {
+        margin-top: 0;
+        font-size: 1.5rem;
+
+        @include mobile {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.card {
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    // border: 1px solid sandybrown; //testing purpose
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+        width: 50%;
+    }
+
+    * {
+        // border: 1px solid sandybrown; //testing purpose
+    }
+
+    .card-title {
+        text-transform: uppercase;
+        color: map-get($map: $mycolors, $key: whitecolor);
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+
+    .card-item {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+
+        .item-icon {
+            font-size: 1.2rem;
+            width: 40px;
+            color : map-get($map: $mycolors, $key: headcolor);
+        }
+
+        .item-body {
+            padding-left: 10px;
+
+            .item-head {
+                font-size: 1.3rem;
+                color: map-get($map: $mycolors, $key: headcolor);
+
+                @include mobile {
+                    font-size: 1.1rem;
+                }
+            }
+
+            .item-description {
+                color: map-get($map: $mycolors, $key: lightbackground);
+                font-size: 0.8rem;
+
+                @include mobile {
+                    font-size: .75rem;
+                }
+            }
+
+        }
+
+        .twitter {
+            color: #38A1F3;
+        }
+        .facebook {
+            color: #3B5998;
+        }
+        .github {
+            color: #38A1F3;
+        }
+        .php {
+            color : #666699;
+            font-size: 1rem;
+        }
+        .python {
+            color : #666699;
+            font-size: 1.5rem;
+        }
+        .javascript {
+            color : #F5DE19;
+            // font-size: 2rem;
+        }
+        .css {
+            color : #0070B7;
+            // font-size: 2rem;
+        }
+        .html {
+            color : #E44D26;
+            // font-size: 2rem;
+        }
+        .fa-gamepad{
+            font-size: 2rem;
+        }
+    }
+
+
+}
