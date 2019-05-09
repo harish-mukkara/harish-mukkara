@@ -119,7 +119,7 @@ a {
         .item-icon {
             font-size: 1.2rem;
             width: 40px;
-            color : map-get($map: $mycolors, $key: headcolor);
+            color: map-get($map: $mycolors, $key: headcolor);
             text-align: center;
         }
 
@@ -149,36 +149,42 @@ a {
         .twitter {
             color: #38A1F3;
         }
+
         .facebook {
             color: #3B5998;
         }
+
         .github {
             color: #38A1F3;
         }
+
         .php {
-            color : #666699;
+            color: #666699;
             font-size: 1rem;
         }
+
         .python {
-            color : #666699;
+            color: #366F9E;
             font-size: 1.5rem;
         }
+
         .javascript {
-            color : #F5DE19;
+            color: #F5DE19;
             // font-size: 2rem;
         }
+
         .css {
-            color : #0070B7;
+            color: #0070B7;
             // font-size: 2rem;
         }
+
         .html {
-            color : #E44D26;
+            color: #E44D26;
             // font-size: 2rem;
         }
-        .fa-gamepad{
+
+        .fa-gamepad {
             font-size: 2rem;
         }
     }
-
-
 }
