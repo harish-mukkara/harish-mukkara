@@ -120,6 +120,7 @@ a {
             font-size: 1.2rem;
             width: 40px;
             color : map-get($map: $mycolors, $key: headcolor);
+            text-align: center;
         }
 
         .item-body {
