@@ -187,8 +187,18 @@
                     // console.log();
                 });
                 console.log(`Payload is ${payload}`);
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event', data: JSON.stringify({
+                        event: {
+                            code: "Date",
+                            data: {
+                                selectedDate: date
+                            }
+                        }
+                    })
+                }));
+                });
             });
-        });
     </script>
 </body>
 
