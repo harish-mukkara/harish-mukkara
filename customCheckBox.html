@@ -116,7 +116,11 @@
         $(document).ready(function () {
             //on load
             let params = [...new URLSearchParams(window.location.search).entries()];
+
             let options = $('#options');
+
+            params = params.filter(param => params[0] !== 'frameId');
+            // console.log(params)
             params.forEach(param => {
                 options.append($(`<label class="container">${param[0]}<input type="checkbox" value="${param[1]}"><span class="checkmark"></span></label>`));
             })
