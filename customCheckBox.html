@@ -129,7 +129,7 @@
                     let label = $(this);
                     let checkBox = label.children('input').eq(0);
                     if (checkBox.prop("checked") == true) {
-                        payload.push({ [label.text().trim()]: checkBox.val() });
+                        payload.push(checkBox.val());
                     }
                     // console.log();
                 });
