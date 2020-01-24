@@ -90,7 +90,8 @@
             padding: 5px;
             border-radius: 0.3em;
             border-color: #1C4191;
-            color: #1C4191;
+            background-color: #1C4191;
+            color: #ccc;
             position: relative;
             overflow: hidden;
         }
@@ -99,30 +100,6 @@
 
 <body>
     <div id="options">
-        <label class="container">One
-            <input type="checkbox" value="some">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Two
-            <input type="checkbox" value="some2">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Three
-            <input type="checkbox" value="some3">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Four
-            <input type="checkbox" value="some4">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">One
-            <input type="checkbox" value="some">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Two
-            <input type="checkbox" value="some2">
-            <span class="checkmark"></span>
-        </label>
     </div>
     <button id="submit">
         submit
@@ -132,25 +109,35 @@
         $(document).ready(function () {
             //on load
             let params = [...new URLSearchParams(window.location.search).entries()];
-            console.log(params)
+            let options = $('#options');
+
+            params.forEach(param => {
+
+            })
+            // console.log(params)
+
+            params.forEach(param => {
+                options.append($(`<label class="container">${param[0]}<input type="checkbox" value="${param[1]}"><span class="checkmark"></span></label>`));
+            })
+
             //on submit
             $("#submit").click(function (e) {
                 let payload = [];
                 console.log('button clicked');
-                let options = $('#options');
+
                 options.children('label').each(function (index) {
                     let label = $(this);
                     let checkBox = label.children('input').eq(0);
                     if (checkBox.prop("checked") == true) {
-                        payload.push(label.text().trim());
+                        payload.push({ [label.text().trim()]: checkBox.val() });
                     }
                     // console.log();
                 });
-                console.log(`Payload is ${payload}`);
+                console.log(`Payload is ${JSON.stringify(payload)}`);
                 window.parent.postMessage(JSON.stringify({
                     event_code: 'ym-client-event', data: JSON.stringify({
                         event: {
-                            code: "Date",
+                            code: "issues",
                             data: {
                                 payload
                             }
