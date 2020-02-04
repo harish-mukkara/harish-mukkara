@@ -12,6 +12,10 @@
             font-weight: 400;
         }
 
+        body {
+            position: relative;
+        }
+
         /* The container */
         .container {
             display: block;
@@ -116,10 +120,25 @@
             background-color: gray;
             color: #ccc;
         }
+
+        #wrapper {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(227, 235, 244, 0.8);
+            z-index: 1;
+            transition-duration: 500ms;
+            transition-property: display;
+        }
     </style>
 </head>
 
 <body>
+    <div id="wrapper">
+    </div>
     <div id="options">
     </div>
     <div id="error">choose atlest one option</div>
@@ -167,6 +186,7 @@
                         })
                     }), '*');
                     $('#submit').attr('disabled', 'disabled');
+                    $('#wrapper').addClass('show');
                 }
             });
         });
