@@ -82,6 +82,19 @@
             transform: rotate(45deg);
         }
 
+        #error {
+            color: red;
+            display: none;
+            margin: 5px;
+            transition-duration: 200ms;
+            transition-property: display;
+
+        }
+
+        .show {
+            display: inherit !important;
+        }
+
         #submit {
             position: absolute;
             bottom: 0;
@@ -108,6 +121,7 @@
 <body>
     <div id="options">
     </div>
+    <div id="error">choose atlest one option</div>
     <button id="submit">
         submit
     </button>
@@ -116,19 +130,18 @@
         $(document).ready(function () {
             //on load
             let params = [...new URLSearchParams(window.location.search).entries()];
-
             let options = $('#options');
-
             params = params.filter(param => param[0] != 'frameId');
             // console.log(params)
             params.forEach(param => {
                 options.append($(`<label class="container">${param[0]}<input type="checkbox" value="${param[1]}"><span class="checkmark"></span></label>`));
             })
-
+            $('#options>.container').click(function (e) {
+                $('#error').removeClass('show');
+            })
             //on submit
             $("#submit").click(function (e) {
                 let payload = [];
-                console.log('button clicked');
 
                 options.children('label').each(function (index) {
                     let label = $(this);
@@ -138,17 +151,22 @@
                     }
                     // console.log();
                 });
-                window.parent.postMessage(JSON.stringify({
-                    event_code: 'ym-client-event', data: JSON.stringify({
-                        event: {
-                            code: "issues",
-                            data: {
-                                payload
+                console.log('payload', payload);
+                if (payload.length == 0) {
+                    $('#error').addClass('show');
+                } else {
+                    window.parent.postMessage(JSON.stringify({
+                        event_code: 'ym-client-event', data: JSON.stringify({
+                            event: {
+                                code: "issues",
+                                data: {
+                                    payload
+                                }
                             }
-                        }
-                    })
-                }), '*');
-                $('#submit').attr('disabled', 'disabled');
+                        })
+                    }), '*');
+                    $('#submit').attr('disabled', 'disabled');
+                }
             });
         });
     </script>
