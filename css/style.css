@@ -130,7 +130,7 @@ a {
 
 @media (max-width: 767px) {
   .card .card-item .item-body .item-description {
-    font-size: .75rem;
+    font-size: 0.9rem;
   }
 }
 
