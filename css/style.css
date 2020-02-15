@@ -125,12 +125,12 @@ a {
 
 .card .card-item .item-body .item-description {
   color: #808080;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 767px) {
   .card .card-item .item-body .item-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
