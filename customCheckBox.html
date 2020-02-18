@@ -168,24 +168,15 @@
                     }
                     // console.log();
                 });
-                console.log('payload', payload);
+                // console.log('payload', payload);
                 if (payload.length == 0) {
                     $('#error').addClass('show');
                 } else {
-                    window.parent.postMessage(JSON.stringify({
-                        event_code: 'ym-client-event', data: JSON.stringify({
-                            event: {
-                                code: "issues",
-                                data: {
-                                    payload
-                                }
-                            }
-                        })
-                    }), '*');
+                    window.parent.postMessage(JSON.stringify({data:  payload}), '*');
                     $('#submit').attr('disabled', 'disabled');
                     $('#wrapper').addClass('show');
                 }
             });
         });
-    </script>
+    </script>`
 </body>
