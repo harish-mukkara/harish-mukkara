@@ -172,7 +172,16 @@
                 if (payload.length == 0) {
                     $('#error').addClass('show');
                 } else {
-                    window.parent.postMessage(JSON.stringify({"harish":123}), '*');
+                     window.parent.postMessage(JSON.stringify({
+                        event_code: 'ym-client-event', data: JSON.stringify({
+                            event: {
+                                code: "issues",
+                                data: {
+                                    payload
+                                }
+                            }
+                        })
+                    }), '*');
                     $('#submit').attr('disabled', 'disabled');
                     $('#wrapper').addClass('show');
                 }
