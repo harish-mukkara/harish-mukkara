@@ -3,7 +3,7 @@
 Harish Mukkara
 ==============
 
-#### I am Full stack Developer, Chatbot Developer. Working as a Software Engineer at [Yellowmessenger](https://yellowmessenger.com/)
+### I am Full stack Developer and a Chatbot Developer. Working as a Software Engineer at [Yellowmessenger](https://yellowmessenger.com/)
 
 ---
 
