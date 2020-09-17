@@ -13,7 +13,7 @@ SOCIAL
 
 [LinkedIn](https://www.linkedin.com/in/harishmukkara/)
 
-[Github](https://github.com/hy505)
+[Github](https://github.com/harish-mukkara)
 
 
 ---
